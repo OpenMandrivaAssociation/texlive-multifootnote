@@ -1,6 +1,6 @@
 Name:		texlive-multifootnote
-Version:	63456
-Release:	2
+Version:	70745
+Release:	1
 Summary:	Multiple numbers for the same footnote
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/multifootnote
