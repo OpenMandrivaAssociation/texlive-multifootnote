@@ -3,7 +3,7 @@ Version:	70745
 Release:	1
 Summary:	Multiple numbers for the same footnote
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/multifootnote
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/multifootnote
 License:	lppl1.3c
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/multifootnote.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/multifootnote.doc.r%{version}.tar.xz
