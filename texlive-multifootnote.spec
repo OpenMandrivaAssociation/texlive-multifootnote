@@ -1,36 +1,27 @@
-Name:		texlive-multifootnote
-Version:	70745
+%global tl_name multifootnote
+%global tl_revision 70745
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
 Release:	1
 Summary:	Multiple numbers for the same footnote
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/multifootnote
 License:	lppl1.3c
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/multifootnote.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/multifootnote.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/multifootnote.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/multifootnote.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides several commands for generating footnotes
-with multiple numbers (resp. marks).
+This package provides several commands for generating footnotes which
+correspond to multiple footnote numbers (resp. marks). In some cases,
+you may wish for certain footnotes to correspond to several places in
+your text. The traditional solution usually involves writing the same
+footnote mark multiple times at the corresponding places. However, this
+approach makes it difficult to see at once how many times a footnote has
+been referred to. Therefore, the current package proposes another
+method: writing the footnote marks in linear order, and allowing a
+footnote text to match several of these marks.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%{_texmfdistdir}/tex/latex/multifootnote
-%doc %{_texmfdistdir}/doc/latex/multifootnote
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
